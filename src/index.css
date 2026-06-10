@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --color-gold: #C9A96E;
+  --color-gold-light: #D4BA85;
+  --color-dark: #0A0A0A;
+  --color-dark-deep: #050505;
+  --color-dark-card: #0F0F0F;
+  --color-warm: #F5F3EF;
+  --color-warm-dark: #EBE8E1;
+  --color-text-primary: #1A1A1A;
+  --color-text-muted: #8A8A8A;
+  --color-text-light: #E5E5E5;
+}
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-dark);
+  color: var(--color-text-light);
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar (Premium Gold) ─── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9A96E;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4BA85;
+}
+
+/* ─── Scroll Reveal System ─── */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(12px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.reveal-delay-100 { transition-delay: 100ms; }
+.reveal-delay-200 { transition-delay: 200ms; }
+.reveal-delay-300 { transition-delay: 300ms; }
+.reveal-delay-400 { transition-delay: 400ms; }
+.reveal-delay-500 { transition-delay: 500ms; }
+.reveal-delay-600 { transition-delay: 600ms; }
+.reveal-delay-700 { transition-delay: 700ms; }
+
+/* ─── Hero Animations ─── */
+@keyframes hero-zoom {
+  0% { transform: scale(1.0); }
+  100% { transform: scale(1.1); }
+}
+
+@keyframes gold-line-grow {
+  0% { width: 0; }
+  100% { width: 80px; }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(10px); opacity: 0.8; }
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(30px); filter: blur(12px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* Hero content staggered entrance */
+.hero-content > * {
+  opacity: 0;
+  animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-content > *:nth-child(1) { animation-delay: 0.3s; }
+.hero-content > *:nth-child(2) { animation-delay: 0.6s; }
+.hero-content > *:nth-child(3) { animation-delay: 0.9s; }
+.hero-content > *:nth-child(4) { animation-delay: 1.2s; }
+.hero-content > *:nth-child(5) { animation-delay: 1.5s; }
+
+/* Gold animated line */
+.gold-line {
+  height: 1px;
+  background: #C9A96E;
+  animation: gold-line-grow 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 1s;
+  width: 0;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  animation: scroll-bounce 2.5s ease-in-out infinite;
+}
+
+/* ─── Method step transition ─── */
+.method-content-enter {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.method-content-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── WhatsApp Floating Button ─── */
+@keyframes whatsapp-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-btn {
+  animation: whatsapp-pulse 2.5s ease-in-out infinite;
+}
+
+.whatsapp-tooltip {
+  opacity: 0;
+  transform: translateX(8px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.whatsapp-wrapper:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
