@@ -66,6 +66,7 @@ export default function Grupo({ onNavigate }: GrupoProps) {
                 src="/logo three.png"
                 alt="Logo Grupo Three"
                 className="h-20 w-auto object-contain"
+                style={{ filter: 'brightness(0) invert(1)' }}
               />
             </div>
             <h2 className="font-display font-extralight text-3xl sm:text-4xl text-white tracking-tight leading-tight">

@@ -201,7 +201,10 @@ function App() {
             <img
               src="/logo three.png"
               alt="Logo Grupo Three"
-              className="h-14 md:h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+              className="h-14 md:h-16 w-auto object-contain transition-all duration-500 group-hover:scale-105"
+              style={{
+                filter: isLightHeader ? 'brightness(0)' : 'brightness(0) invert(1)'
+              }}
             />
           </a>
 
@@ -793,6 +796,7 @@ function App() {
                 src="/logo three.png"
                 alt="Logo Grupo Three"
                 className="h-8 w-auto object-contain"
+                style={{ filter: 'brightness(0) invert(1)' }}
               />
               <div className="flex flex-col">
                 <span className="font-display font-bold text-sm tracking-[0.2em] text-white/80">
