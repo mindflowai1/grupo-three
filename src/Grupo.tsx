@@ -61,9 +61,13 @@ export default function Grupo({ onNavigate }: GrupoProps) {
         <div className="w-full md:w-[35%] lg:w-[30%] p-8 sm:p-12 lg:p-16 border-b md:border-b-0 md:border-r border-white/[0.04] bg-[#0A0A0A] z-10 shrink-0 md:overflow-y-auto">
           <div className="flex flex-col justify-between min-h-full gap-8">
             <div className="flex flex-col gap-6">
-            <span className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#C9A96E]">
-              O Grupo Three
-            </span>
+            <div className="flex justify-center w-full mb-2">
+              <img
+                src="/logo three.png"
+                alt="Logo Grupo Three"
+                className="h-20 w-auto object-contain"
+              />
+            </div>
             <h2 className="font-display font-extralight text-3xl sm:text-4xl text-white tracking-tight leading-tight">
               A sinergia do ciclo construtivo completo<span className="text-[#C9A96E]">.</span>
             </h2>

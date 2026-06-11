@@ -196,18 +196,13 @@ function App() {
           <a
             href="/"
             onClick={(e) => { e.preventDefault(); navigateTo('grupo'); }}
-            className="flex flex-col"
+            className="group flex items-center"
           >
-            <span className={`font-display font-bold text-base md:text-lg tracking-[0.2em] transition-colors duration-500 ${
-              isLightHeader ? 'text-[#1A1A1A]' : 'text-white'
-            }`}>
-              GRUPO THREE
-            </span>
-            <span className={`text-[9px] uppercase tracking-[0.25em] -mt-0.5 transition-colors duration-500 ${
-              isLightHeader ? 'text-black/40' : 'text-white/40'
-            }`}>
-              Engenharia & Inteligência
-            </span>
+            <img
+              src="/logo three.png"
+              alt="Logo Grupo Three"
+              className="h-14 md:h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+            />
           </a>
 
           {/* Desktop Nav */}
@@ -792,15 +787,21 @@ function App() {
         <footer className="bg-[#0A0A0A] border-t border-white/[0.04] py-16 md:py-24 text-sm text-white/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
 
-          {/* Logo */}
           <div className="flex flex-col gap-4">
-            <div className="flex flex-col">
-              <span className="font-display font-bold text-sm tracking-[0.2em] text-white/80">
-                GRUPO THREE
-              </span>
-              <span className="text-[8px] uppercase tracking-[0.25em] text-white/25 -mt-0.5">
-                Engenharia & Inteligência
-              </span>
+            <div className="flex items-center gap-3">
+              <img
+                src="/logo three.png"
+                alt="Logo Grupo Three"
+                className="h-8 w-auto object-contain"
+              />
+              <div className="flex flex-col">
+                <span className="font-display font-bold text-sm tracking-[0.2em] text-white/80">
+                  GRUPO THREE
+                </span>
+                <span className="text-[8px] uppercase tracking-[0.25em] text-white/25 -mt-0.5">
+                  Engenharia & Inteligência
+                </span>
+              </div>
             </div>
             <p className="text-xs leading-relaxed max-w-xs font-light text-white/20">
               Grupo empresarial especializado em inteligência técnica, projetos, interiores e construções de alto padrão.
